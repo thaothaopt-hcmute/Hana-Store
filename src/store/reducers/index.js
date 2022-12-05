@@ -1,9 +1,10 @@
 import {combineReducers} from 'redux';
 
 // Reducer Imports
+import authReducer from './authReducer';
 import idiomsReducer from './idiomsReducer';
 import otherReducer from './otherReducer';
-import auth from './authReducer';
+// import auth from './authReducer';
 import AsyncStorage from '@react-native-community/async-storage';
 import {persistReducer} from 'redux-persist';
 import connectReducer from './connectReducer';
@@ -26,9 +27,10 @@ const idiomsPersistConfig = {
 
 const rootReducer = combineReducers({
   // Reducers
+  auth: authReducer,
   idioms: persistReducer(idiomsPersistConfig, idiomsReducer),
   other: otherReducer,
-  auth: persistReducer(authPersistConfig, auth),
+  // auth: persistReducer(authPersistConfig, auth),
   connect: connectReducer,
   error: errorReducer,
   loading: loadingReducer,

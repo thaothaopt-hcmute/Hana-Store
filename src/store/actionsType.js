@@ -14,6 +14,10 @@ export const asyncTypes = (action) => ({
   END: `${action}_END`,
 });
 // Actions
+export const AUTH = {
+  SIGN_IN: asyncTypes('AUTH/SIGN_IN'),
+};
+
 export const IDIOMS = {
   SELECT_CATEGORY: 'IDIOMS/SELECT_CATEGORY',
   GET_IDIOMS: 'IDIOMS/GET_IDIOMS',
@@ -22,18 +26,6 @@ export const IDIOMS = {
 
 export const OTHER = {
   GET_APP_VERSION: asyncTypes('OTHER/GET_APP_VERSION'),
-};
-
-/*
-  AUTH
-  - login
-  - register
-*/
-export const AUTH = {
-  SIGN_IN: asyncTypes('AUTH/SIGN_IN'),
-  SIGN_UP: asyncTypes('AUTH/SIGN_UP'),
-  GET_USER_INFO: asyncTypes('AUTH/GET_USER_INFO'),
-  ACCESS_TOKEN: 'ACCESS_TOKEN',
 };
 
 /*

@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from 'react';
+import React, {useLayoutEffect, useCallback} from 'react';
 import SignInView from './SignIn.view';
 import {NAMESPACE} from './SignIn.constants';
 
@@ -11,12 +11,23 @@ export default function SignInContainer({navigation}) {
 
   const [username, onChangeText] = React.useState('Useless Text');
 
-  const onPressLogin = useCallback(() => {}, []);
+  const onPressSubmit = useCallback((values) => {
+    actions.signInSubmit({
+      params: values,
+      callback: (err, res) => {
+        if (!err) {
+          NavigationServices.resetActionTo(SCENE_NAMES.MAIN);
+          // onSubmitFcmToken();
+        }
+      },
+    });
+
+  }, []);
 
   return (
     <SignInView
       isLoading={false}
-      onPressLogin={onPressLogin}
+      onPressSubmit={onPressSubmit}
       // onChangeText={onChangeText}
     />
   );

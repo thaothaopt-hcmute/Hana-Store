@@ -6,8 +6,17 @@ import EnterInfoBox from 'components/EnterInfoBox';
 import * as React from 'react';
 import {View, Text, Image} from 'react-native';
 import styles from './SignIn.styles';
+import {useFormik} from 'formik';
+import { SIGNIN_FORM_SCHEME } from './SignIn.constants';
 
-function SignInView({onPressLogin, onChangeText}) {
+function SignInView({onPressSubmit, onChangeText}) {
+  const {handleChange, touched, values, errors, handleSubmit} = useFormik({
+    initialValues: {username: ''},
+    validationSchema: SIGNIN_FORM_SCHEME,
+    validateOnChange: false,
+    onSubmit: onPressSubmit,
+  });
+  console.log('handleChange::', values, errors);
   return (
     <AppContainer>
       <View style={styles.container}>
@@ -17,11 +26,17 @@ function SignInView({onPressLogin, onChangeText}) {
             Hello
           </AppText>
           <AppText style={styles.signintoText}>Sign into your Account</AppText>
-          <EnterInfoBox label={'Username'} onChangeText={onChangeText} />
+          <EnterInfoBox
+            label={'Username'}
+            onChangeText={handleChange('username')}
+            error={touched.username && errors.username}
+            value={values.username}
+            messageError={errors.username}
+          />
           <AppButton
             title={'Login'}
             style={styles.button}
-            onPress={onPressLogin}
+            onPress={handleSubmit}
           />
           <AppText style={styles.noAccountWarnText}>
             *If you don't have account, please contact your Manager
