@@ -1,0 +1,16 @@
+import React, {useLayoutEffect} from 'react';
+import {{properCase name}}View from './{{properCase name}}.view';
+import {NAMESPACE} from './{{properCase name}}.constants';
+import {getString} from 'utils/i18n';
+
+export default function {{properCase name}}Container({navigation}) {
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: getString(`${NAMESPACE}.title`),
+    });
+  }, [navigation]);
+
+  return (
+    <{{properCase name}}View isLoading={isLoading} />
+  );
+}

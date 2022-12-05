@@ -1,0 +1,10 @@
+export const COLOR_PRIMARY = '#ed5e05'; // #00ABF7, #4eb329, #f28868, #f04f6f, #44c5cf, #dba13b
+export const COLOR_SECONDARY = '#235c0f'; // #052a86, #235c0f, #ed5d32, #911a32, #21828a, #966a1b
+export const COLOR_THIRD = '#000000';
+export const COLOR_LIGHT_CONTENT = '#ffffff';
+export const COLOR_BACKGROUND = '#ffffff';
+export const COLOR_TEXT_PRIMARY = '#333333';
+export const COLOR_TEXT_SECONDARY = '#777e8b';
+export const COLOR_BACKDROP = '#f5f5f5';
+export const COLOR_BUTTON_BACKGROUND = '#ed5e05';
+export const COLOR_TEXT_LINK = '#00ABF7'
