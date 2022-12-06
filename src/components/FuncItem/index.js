@@ -3,7 +3,7 @@ import styles from './styles';
 import {View, Image, TouchableOpacity} from 'react-native';
 import AppText from 'components/AppText';
 
-function FuncItem({label, imageSource}) {
+function FuncItem({label, imageSource, onPress}) {
   const _onPress = useCallback(() => {
     typeof onPress === 'function' && onPress();
   }, [onPress]);
