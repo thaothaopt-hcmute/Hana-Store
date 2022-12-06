@@ -34,7 +34,7 @@ function RootNavigator({onNavigationStateChange}) {
         // initialRouteName={
         //   isSelectedIdioms ? SCREENS_NAME.HOME : SCREENS_NAME.CATEGORY
         // }
-        initialRouteName={SCREENS_NAME.SIGN_IN}>
+        initialRouteName={SCREENS_NAME.GET_START}>
         {__DEV__ && (
           <Stack.Screen name={SCREENS_NAME.DUMMY} component={DummyContainer} />
         )}

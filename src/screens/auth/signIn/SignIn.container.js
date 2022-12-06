@@ -24,15 +24,17 @@ export default function SignInContainer({navigation}) {
     //   },
     // });
     NavigationServices.resetActionTo(SCREENS_NAME.HOME);
+  }, []);
 
-
+  const onPressLeft = useCallback(() => {
+    NavigationServices.goBack();
   }, []);
 
   return (
     <SignInView
       isLoading={false}
       onPressSubmit={onPressSubmit}
-      // onChangeText={onChangeText}
+      onPressLeft={onPressLeft}
     />
   );
 }
