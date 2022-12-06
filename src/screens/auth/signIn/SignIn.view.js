@@ -7,19 +7,19 @@ import * as React from 'react';
 import {View, Text, Image} from 'react-native';
 import styles from './SignIn.styles';
 import {useFormik} from 'formik';
-import { SIGNIN_FORM_SCHEME } from './SignIn.constants';
+import {SIGNIN_FORM_SCHEME} from './SignIn.constants';
 import AppHeader from 'components/AppHeader';
 
 function SignInView({onPressSubmit, onPressLeft}) {
   const {handleChange, touched, values, errors, handleSubmit} = useFormik({
-    initialValues: {username: ''},
+    initialValues: {username: 'P1234501'},
     validationSchema: SIGNIN_FORM_SCHEME,
     validateOnChange: false,
     onSubmit: onPressSubmit,
   });
   return (
     <AppContainer>
-      <AppHeader title={'Back'} onPressLeft={onPressLeft}/>
+      <AppHeader title={'Back'} onPressLeft={onPressLeft} />
       <View style={styles.container}>
         <Image source={LOGO_DEFAULT} style={styles.logoImage} />
         <View style={styles.signinBox}>
