@@ -8,6 +8,7 @@ const locales = RNLocalize.getLocales();
 
 if (Array.isArray(locales)) {
   // I18n.locale = locales[0].languageCode;
+  // I18n.locale = 'ja';
   I18n.locale = 'vi';
 }
 

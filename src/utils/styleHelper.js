@@ -28,13 +28,16 @@ export function mapPropsToFontStyle(props) {
 
 export const appShadow = StyleSheet.create({
   shadow: {
+    shadowColor: '#000000',
     shadowOffset: {
-      height: 20,
       width: 0,
+      height: 2,
     },
-    shadowColor: 'rgba(194, 194, 194, 0.3)',
-    shadowOpacity: 0.5,
-    shadowRadius: 10,
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
+
     ...Platform.select({
       android: {
         borderBottomColor: COLOR_TEXT_PRIMARY,

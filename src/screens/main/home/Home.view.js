@@ -1,31 +1,25 @@
 import React, {useCallback} from 'react';
 import {View, FlatList} from 'react-native';
-import AppText from 'components/AppText';
 import styles from './Home.styles';
-import IdiomItem from './component/IdiomItem';
+import FuncItem from 'components/FuncItem';
+import {CASHIER, DATA_ANALYTICS, STAFFS, WAREHOUSE} from 'assets/path';
+import AppContainer from 'components/AppContainer';
 // import {NAMESPACE} from './Home.constants';
 
 function HomeView({idioms, onPressIdiomItem}) {
-  const keyExtractor = useCallback(
-    (item, index) => (item.id || index).toString(),
-    [],
-  );
-
-  const renderItem = useCallback(({item, index}) => {
-    return (
-      <IdiomItem item={item} index={index} onPressItem={onPressIdiomItem} />
-    );
-  }, []);
-
   return (
-    <View style={styles.container}>
-      <AppText text={'HomeView'} />
-      <FlatList
-        data={idioms}
-        keyExtractor={keyExtractor}
-        renderItem={renderItem}
-      />
-    </View>
+    <AppContainer>
+      <View style={styles.container}>
+        <View style={styles.row1}>
+          <FuncItem label={'Staffs'} imageSource={STAFFS} />
+          <FuncItem label={'Store'} imageSource={WAREHOUSE} />
+        </View>
+        <View style={styles.row2}>
+          <FuncItem label={'Statistics'} imageSource={DATA_ANALYTICS} />
+          <FuncItem label={'POS'} imageSource={CASHIER} />
+        </View>
+      </View>
+    </AppContainer>
   );
 }
 

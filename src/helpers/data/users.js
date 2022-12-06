@@ -7,6 +7,7 @@ export const USERS = [
     first_name: 'Linh',
     role: USER_ROLE.EMP,
     username: 'P1234503',
+    image: '',
   },
   {
     id: 'P1234502',
@@ -14,6 +15,7 @@ export const USERS = [
     first_name: 'An',
     role: USER_ROLE.EMP,
     username: 'P1234502',
+    image: '',
   },
   {
     id: 'P1234501',
@@ -21,5 +23,6 @@ export const USERS = [
     first_name: 'Thi',
     role: USER_ROLE.MANAGE,
     username: 'P1234501',
+    image: '',
   },
 ];
