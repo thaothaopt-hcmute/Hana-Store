@@ -2,12 +2,12 @@ export const NAMESPACE = 'scenes.main.signIn';
 import * as Yup from 'yup';
 
 export const SIGNIN_FORM_SCHEME = Yup.object().shape({
-    username: Yup.string()
+  staffID: Yup.string()
     .min(
       8,
-      'Username must have at least 8 characters',
+      'Staff ID must have at least 8 characters',
     )
     .required(
-      'Username is required',
+      'Staff ID is required',
     ),
   });

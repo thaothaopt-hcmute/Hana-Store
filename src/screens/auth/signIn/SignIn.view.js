@@ -12,7 +12,7 @@ import AppHeader from 'components/AppHeader';
 
 function SignInView({onPressSubmit, onPressLeft}) {
   const {handleChange, touched, values, errors, handleSubmit} = useFormik({
-    initialValues: {username: 'P1234501'},
+    initialValues: {staffID: 'P1234501'},
     validationSchema: SIGNIN_FORM_SCHEME,
     validateOnChange: false,
     onSubmit: onPressSubmit,
@@ -28,11 +28,11 @@ function SignInView({onPressSubmit, onPressLeft}) {
           </AppText>
           <AppText style={styles.signintoText}>Sign into your Account</AppText>
           <EnterInfoBox
-            label={'Username'}
-            onChangeText={handleChange('username')}
-            error={touched.username && errors.username}
-            value={values.username}
-            messageError={errors.username}
+            label={'Staff ID'}
+            onChangeText={handleChange('staffID')}
+            error={touched.staffID && errors.staffID}
+            value={values.staffID}
+            messageError={errors.staffID}
             placeholder={'Pxxxxxxx'}
           />
           <AppButton

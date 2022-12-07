@@ -30,4 +30,8 @@ export const AUDIO_LINKS = [
 export const USER_ROLE = {
   EMP: 'employee',
   MANAGE: 'manage'
+};
+export const GENDER = {
+  MALE: 'male',
+  FEMALE: 'female'
 }

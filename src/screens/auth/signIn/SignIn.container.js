@@ -11,8 +11,6 @@ export default function SignInContainer({navigation}) {
     });
   }, [navigation]);
 
-  const [username, onChangeText] = React.useState('Useless Text');
-
   const onPressSubmit = useCallback((values) => {
     // actions.signInSubmit({
     //   params: values,
