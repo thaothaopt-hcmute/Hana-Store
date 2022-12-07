@@ -15,13 +15,16 @@ export default {
       signIn: {
         title: 'Sign In',
         hello: 'Hello',
-        sign_into: 'Sign into your Account'
+        sign_into: 'Sign into your Account',
       },
     },
     main: {
       home: {
         title: 'Home',
         hello: 'Hello ',
+      },
+      userDetail: {
+        title: 'User Detail',
       },
     },
   },

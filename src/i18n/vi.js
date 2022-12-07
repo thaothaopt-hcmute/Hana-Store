@@ -87,13 +87,13 @@ export default {
     hintOldPassword: 'Mật khẩu cũ',
     hintNewPassword: 'Mật khẩu mới',
   },
-  scenes: {
+  screens: {
     auth: {
       signIn: {
         title: 'Đăng nhập',
         btnLogin: 'Đăng nhập',
         hello: 'Xin chào',
-        sign_into: 'Đăng nhập vào tài khoản của bạn'
+        sign_into: 'Đăng nhập vào tài khoản của bạn',
       },
     },
     main: {
@@ -103,6 +103,12 @@ export default {
       },
       profile: {
         title: 'Tài khoản',
+      },
+      listStaff: {
+        title: 'List Staff',
+      },
+      userDetail: {
+        title: 'User Detail',
       },
     },
   },
