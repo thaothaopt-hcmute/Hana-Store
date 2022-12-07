@@ -7,6 +7,7 @@ export default StyleSheet.create({
   root: {
     display: 'flex',
     backgroundColor: COLOR_BACKGROUND,
+    paddingHorizontal: DEFAULT_PADDING_VERTICAL
   },
   container: {
     flex: 1,
@@ -24,4 +25,5 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  button:{}
 });
