@@ -9,3 +9,4 @@ export const COLOR_BACKDROP = '#f5f5f5';
 export const COLOR_BUTTON_BACKGROUND = '#ed5e05';
 export const COLOR_TEXT_LINK = '#00ABF7';
 export const COLOR_DELETE_BTN = 'red';
+export const COLOR_DISABLED = 'grey';

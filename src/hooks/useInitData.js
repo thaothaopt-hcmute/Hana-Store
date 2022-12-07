@@ -9,9 +9,10 @@ export function useInitData() {
   const initialized = useSelector(isInitializedSelector);
 
   React.useLayoutEffect(() => {
-    if (initialized) {
-      return () => {};
-    }
+    // TODO: Comment lại nếu muốn lấy lại data mới
+    // if (initialized) {
+    //   return () => {};
+    // }
     dispatch(initData({users: USERS}));
   }, []);
 }

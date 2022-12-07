@@ -4,7 +4,7 @@ import {View, TouchableOpacity, TextInput, Platform} from 'react-native';
 import AppText from 'components/AppText';
 import {Icon} from '@rneui/themed';
 
-function SearchBox({onChangeText}) {
+function SearchBox({onChangeText, value}) {
   const _onChangeText = useCallback(
     (text) => {
       typeof onChangeText === 'function' && onChangeText(text);
@@ -30,8 +30,9 @@ function SearchBox({onChangeText}) {
         style={styles.textInput}
         placeholder={'Type...'}
         onChangeText={_onChangeText}
-        clearButtonMode='while-editing'
-        inlineImageLeft='search_icon'
+        clearButtonMode="while-editing"
+        inlineImageLeft="search_icon"
+        value={value}
       />
       {/* <Icon
         name="close"
@@ -39,10 +40,11 @@ function SearchBox({onChangeText}) {
         // color='#517fa4'
         onPress={_onPressClose}
       /> */}
-      {Platform.OS !== 'ios' &&
-      <TouchableOpacity onPress={_onPressClose}>
-      <AppText>Cancel</AppText>
-      </TouchableOpacity>}
+      {Platform.OS !== 'ios' && (
+        <TouchableOpacity onPress={_onPressClose}>
+          <AppText>Cancel</AppText>
+        </TouchableOpacity>
+      )}
     </View>
   );
 }

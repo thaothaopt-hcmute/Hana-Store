@@ -14,7 +14,5 @@ export default function ListStaffContainer({navigation}) {
     });
   }, [navigation]);
 
-  const onChangeText = useCallback((text) => {}, []);
-
-  return <ListStaffView listStaff={listStaff} onChangeText={onChangeText} />;
+  return <ListStaffView listStaff={listStaff} />;
 }

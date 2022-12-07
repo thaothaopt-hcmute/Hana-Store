@@ -24,19 +24,24 @@ export const DEVELOPMENT_EMAIL = 'thaopt.channel@gmail.com';
 export const AUDIO_LINKS = [
   'https://drive.google.com/file/d/12UHTFll8EVkmxG3ZqCs6DLvD39sR-j2D/view?usp=sharing',
   'https://drive.google.com/file/d/1rB7NZWNBBxY1K9iX4lYHTPX9MMrP1m8V/view?usp=sharing',
-  'https://drive.google.com/file/d/1GyYL-qdYZByDYqK_EjWc1s1WSly37obm/view?usp=sharing'
+  'https://drive.google.com/file/d/1GyYL-qdYZByDYqK_EjWc1s1WSly37obm/view?usp=sharing',
 ];
 
 export const USER_ROLE = {
   EMP: 'employee',
-  MANAGE: 'manage'
+  MANAGE: 'manage',
 };
 export const GENDER = {
   MALE: 'male',
-  FEMALE: 'female'
-}
+  FEMALE: 'female',
+};
+
+export const USER_STATUS = {
+  ACTIVE: 'Active',
+  DEACTIVATED: 'Deactivated',
+};
 
 export const MATERIAL_CATEGORY = {
-  FLOWER:'flower',
-  ACCESSORY:'accessory'
-}
+  FLOWER: 'flower',
+  ACCESSORY: 'accessory',
+};
