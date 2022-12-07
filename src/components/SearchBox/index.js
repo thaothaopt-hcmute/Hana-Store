@@ -20,23 +20,26 @@ function SearchBox({onChangeText}) {
 
   return (
     <View style={styles.container}>
-      <Icon
+      {/* <Icon
         name="search"
         type="evilicon"
         // color='#517fa4'
-      />
+      /> */}
       <TextInput
         ref={textInputRef}
         style={styles.textInput}
         placeholder={'Type...'}
         onChangeText={_onChangeText}
       />
-      <Icon
+      {/* <Icon
         name="close"
         type="evilicon"
         // color='#517fa4'
         onPress={_onPressClose}
-      />
+      /> */}
+      <TouchableOpacity onPress={_onPressClose}>
+      <AppText>Cancel</AppText>
+      </TouchableOpacity>
     </View>
   );
 }
