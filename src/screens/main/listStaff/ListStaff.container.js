@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from 'react';
+import React, {useLayoutEffect, useCallback} from 'react';
 import ListStaffView from './ListStaff.view';
 import {NAMESPACE} from './ListStaff.constants';
 import {getString} from 'utils/i18n';
@@ -10,5 +10,8 @@ export default function ListStaffContainer({navigation}) {
     });
   }, [navigation]);
 
-  return <ListStaffView />;
+  const onChangeText = useCallback((text)=>{
+  },[])
+
+  return <ListStaffView onChangeText={onChangeText}/>;
 }

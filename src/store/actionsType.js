@@ -14,6 +14,10 @@ export const asyncTypes = (action) => ({
   END: `${action}_END`,
 });
 // Actions
+export const DBROOT = {
+  INIT_DATA: 'INIT_DATA'
+}
+
 export const AUTH = {
   SIGN_IN: asyncTypes('AUTH/SIGN_IN'),
 };
