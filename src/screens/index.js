@@ -12,6 +12,7 @@ import AppLoading from 'components/AppLoading';
 import {getActiveRouteName} from 'utils/activeRouteName';
 import SCREENS_NAME from 'constants/screensName';
 import NavigationServices from 'utils/navigationServices';
+import {useInitData} from 'hooks/useInitData';
 // import I18n from 'utils/i18n';
 // import ModalNotification, {
 //   showNotification,
@@ -22,6 +23,8 @@ export default function Screen() {
   const actions = useActions({onAppConnectivityChange, hideError});
   const [currentRouteName, setCurrentRouteName] = useState('');
   const isLoading = useSelectorShallow(getIsLoadingSelector);
+
+  useInitData();
 
   const handleBackPress = useCallback(() => {
     console.log('>>>isLoading', isLoading);
