@@ -36,7 +36,7 @@ function MaterialItem({item, onPressItem, onPressDelete, onPressDisable}) {
       )}
       leftContent={(reset) => (
         <AppButton
-          title="Disable"
+          title="Deactivate"
           onPress={() => {
             _onPressDisable();
             reset();

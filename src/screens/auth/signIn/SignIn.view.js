@@ -19,7 +19,6 @@ function SignInView({onPressSubmit, onPressLeft}) {
   });
   return (
     <AppContainer>
-      <AppHeader title={'Back'} onPressLeft={onPressLeft} />
       <View style={styles.container}>
         <Image source={LOGO_DEFAULT} style={styles.logoImage} />
         <View style={styles.signinBox}>

@@ -1,9 +1,18 @@
-import React, {useCallback, useLayoutEffect} from 'react';
+import React, {useCallback, useLayoutEffect, useEffect} from 'react';
 import MaterialDetailView from './MaterialDetail.view';
 import {NAMESPACE} from './MaterialDetail.constants';
 import {getString} from 'utils/i18n';
-import {getParams} from 'utils/navigationServices';
+import NavigationServices, {getParams} from 'utils/navigationServices';
 import moment from 'moment';
+import {useActions} from 'hooks/useActions';
+import useSelectorShallow from 'hooks/useSelectorShallowEqual';
+import {getMaterialDetailSelector} from 'store/selectors/materialStoreSelector';
+import {
+  getMaterialDetailRequest,
+  updateMaterialDetailRequest,
+  getAllMaterialSubmit,
+} from 'store/actions/materialStoreActions';
+import {Alert} from 'react-native';
 
 export default function MaterialDetailContainer({navigation, route}) {
   const params = getParams(route);
@@ -12,16 +21,40 @@ export default function MaterialDetailContainer({navigation, route}) {
       title: params.name.toLocaleUpperCase(),
     });
   }, [navigation]);
-  const d = new Date();
-  const time = d.getDay();
+  const actions = useActions({
+    getMaterialDetailRequest,
+    updateMaterialDetailRequest,
+    getAllMaterialSubmit
+  });
 
-  console.log(
-    'time: ',
-    moment().utcOffset('+05:30').format('YYYY-MM-DD hh:mm:ss a'),
-  );
-  const onPressSubmit = useCallback((values) => {}, []);
+  const materialDetail = useSelectorShallow(getMaterialDetailSelector);
+
+  useEffect(() => {
+    actions.getMaterialDetailRequest(params);
+  }, []);
+
+  const onPressSubmit = useCallback((values) => {
+    console.log('values::', values, materialDetail);
+    actions.updateMaterialDetailRequest({
+      ...materialDetail,
+      count: parseInt(values.quantity) + parseInt(materialDetail.count),
+      last_import: moment().utcOffset('+05:30').format('YYYY-MM-DD hh:mm:ss a'),
+    });
+    Alert.alert('Alert', 'Update successful', [
+      {
+        text: 'Yes',
+        onPress: () => {
+          actions.getAllMaterialSubmit();
+          NavigationServices.goBack();
+        },
+      },
+    ]);
+  }, [actions, materialDetail]);
 
   return (
-    <MaterialDetailView materialDetail={params} onPressSubmit={onPressSubmit} />
+    <MaterialDetailView
+      materialDetail={materialDetail}
+      onPressSubmit={onPressSubmit}
+    />
   );
 }

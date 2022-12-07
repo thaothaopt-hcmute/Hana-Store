@@ -64,7 +64,6 @@ function RootNavigator({onNavigationStateChange}) {
         />
         <Stack.Screen
           name={SCREENS_NAME.SIGN_IN}
-          options={{headerShown: false}}
           component={SignInContainer}
         />
         {/* <Stack.Screen
