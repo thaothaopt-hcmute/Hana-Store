@@ -2,12 +2,14 @@ import {DBROOT} from 'store/actionsType';
 
 const initialState = {
   // TODO
+  initialized: false,
   users: [],
   stores: [],
   material: [],
 };
 
 const dbRoot = (state = initialState, action) => {
+  console.warn(action);
   switch (action.type) {
     case DBROOT.INIT_DATA: {
       return {
@@ -16,6 +18,7 @@ const dbRoot = (state = initialState, action) => {
         stores: action.payload.stores,
         statistics: action.payload.statistics,
         material: action.payload.material,
+        initialized: true,
       };
     }
     default:

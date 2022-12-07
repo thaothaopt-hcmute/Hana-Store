@@ -10,12 +10,12 @@ import autoMergeLevel1 from 'redux-persist/lib/stateReconciler/autoMergeLevel1';
 import rootReducer from 'store/reducers';
 import rootSaga from 'store/sagas';
 
-const bindMiddleware = middleware => applyMiddleware(...middleware);
+const bindMiddleware = (middleware) => applyMiddleware(...middleware);
 
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: [],
+  whitelist: ['dbRoot'],
   version: 1.0,
   stateReconciler: autoMergeLevel1,
 };
