@@ -17,6 +17,8 @@ export const asyncTypes = (action) => ({
 export const MATERIAL_STORE = {
   GET_ALL_MATERIAL: 'GET_ALL_MATERIAL',
   SEARCH_MATERIAL: 'SEARCH_MATERIAL',
+  GET_MATERIAL_DETAIL: 'GET_MATERIAL_DETAIL',
+  UPDATE_MATERIAL: 'UPDATE_MATERIAL'
 };
 
 export const DBROOT = {

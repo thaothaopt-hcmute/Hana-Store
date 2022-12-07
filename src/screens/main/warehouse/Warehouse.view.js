@@ -7,9 +7,9 @@ import MaterialItem from './components/MaterialItem';
 import EmptyListComponent from 'components/EmptyListComponent';
 // import {NAMESPACE} from './Warehouse.constants';
 
-function WarehouseView({onChangeText, foundMaterial}) {
+function WarehouseView({onChangeText, foundMaterial, onPressItem}) {
   const _renderItem = React.useCallback(({item, index}) => {
-    return <MaterialItem item={item} />;
+    return <MaterialItem item={item} onPressItem={onPressItem}/>;
   }, []);
   const keyExtractor = React.useCallback(
     (item, index) => (item.id || index).toString(),

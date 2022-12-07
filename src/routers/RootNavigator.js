@@ -4,6 +4,7 @@ import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
 import NavigationServices from 'utils/navigationServices';
 import SCREENS_NAME from 'constants/screensName';
 // Screen Import
+import MaterialDetailContainer from 'screens/main/materialDetail/MaterialDetail.container';
 import WarehouseContainer from 'screens/main/warehouse/Warehouse.container';
 import UserDetailContainer from 'screens/main/userDetail/UserDetail.container';
 import ListStaffContainer from 'screens/main/listStaff/ListStaff.container';
@@ -42,6 +43,7 @@ function RootNavigator({onNavigationStateChange}) {
           <Stack.Screen name={SCREENS_NAME.DUMMY} component={DummyContainer} />
         )}
         {/* Plop screen */}
+				<Stack.Screen name={ SCREENS_NAME.MATERIAL_DETAIL } component={ MaterialDetailContainer } />
 				<Stack.Screen name={ SCREENS_NAME.WAREHOUSE } component={ WarehouseContainer } />
 				<Stack.Screen name={ SCREENS_NAME.USER_DETAIL } component={ UserDetailContainer } />
 				<Stack.Screen name={ SCREENS_NAME.LIST_STAFF } component={ ListStaffContainer } />

@@ -11,6 +11,7 @@ export const MATERIAL = [
     supplierID: 'SUPPL01',
     category: MATERIAL_CATEGORY.ACCESSORY,
     des: 'There are 10 rolls in a pack',
+    last_import: 1670431031526,
   },
   {
     id: '05',
@@ -23,6 +24,7 @@ export const MATERIAL = [
     supplierID: 'SUPPL01',
     category: MATERIAL_CATEGORY.ACCESSORY,
     des: 'There are 100 branches in a bunch',
+    last_import: 'December 06, 2022 01:15:00',
   },
   {
     id: '04',
@@ -35,6 +37,7 @@ export const MATERIAL = [
     supplierID: 'SUPPL01',
     category: MATERIAL_CATEGORY.ACCESSORY,
     des: 'There are 100 sheets in a pack',
+    last_import: 'December 07, 2022 01:15:00',
   },
   {
     id: '03',
@@ -47,6 +50,7 @@ export const MATERIAL = [
     supplierID: 'SUPPL01',
     category: MATERIAL_CATEGORY.FLOWER,
     des: '',
+    last_import: 'December 07, 2022 01:15:00',
   },
   {
     id: '02',
@@ -59,6 +63,7 @@ export const MATERIAL = [
     supplierID: 'SUPPL02',
     category: MATERIAL_CATEGORY.FLOWER,
     des: '',
+    last_import: 'December 07, 2022 01:15:00',
   },
   {
     id: '01',
@@ -71,5 +76,6 @@ export const MATERIAL = [
     supplierId: 'SUPPL02',
     category: MATERIAL_CATEGORY.FLOWER,
     des: '',
+    last_import: 'December 07, 2022 01:15:00',
   },
 ];

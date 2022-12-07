@@ -11,6 +11,7 @@ function EnterInfoBox({
   error,
   messageError,
   placeholder,
+  keyboardType,
 }) {
   return (
     <View style={styles.container}>
@@ -20,6 +21,7 @@ function EnterInfoBox({
         value={value}
         placeholder={placeholder}
         onChangeText={onChangeText}
+        keyboardType={keyboardType || 'default'}
       />
     </View>
   );

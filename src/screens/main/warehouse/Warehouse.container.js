@@ -9,6 +9,8 @@ import {
 } from 'store/selectors/materialStoreSelector';
 import {useActions} from 'hooks/useActions';
 import {searchMaterialRequest} from 'store/actions/materialStoreActions';
+import NavigationServices from 'utils/navigationServices';
+import SCREENS_NAME from 'constants/screensName';
 
 export default function WarehouseContainer({navigation}) {
   useLayoutEffect(() => {
@@ -22,17 +24,18 @@ export default function WarehouseContainer({navigation}) {
   const material = useSelectorShallow(allMaterialSelector);
 
   const foundMaterial = useSelectorShallow(foundMaterialSelector);
-  console.log('material::', material);
-  console.log('foundMaterial::', foundMaterial);
 
   const onChangeText = useCallback((key) => {
-      actions.searchMaterialRequest(key);
-
+    actions.searchMaterialRequest(key);
+  }, []);
+  const onPressItem = useCallback((item) => {
+    NavigationServices.navigate(SCREENS_NAME.MATERIAL_DETAIL, item);
   }, []);
   return (
     <WarehouseView
       onChangeText={onChangeText}
-      foundMaterial={foundMaterial||material}
+      foundMaterial={foundMaterial || material}
+      onPressItem={onPressItem}
     />
   );
 }
