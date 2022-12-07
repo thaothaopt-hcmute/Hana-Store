@@ -41,7 +41,7 @@ export const appShadow = StyleSheet.create({
     ...Platform.select({
       android: {
         borderBottomColor: COLOR_TEXT_PRIMARY,
-        borderBottomWidth: 0.5,
+        // borderBottomWidth: 0.5,
       },
     }),
   },

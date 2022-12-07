@@ -35,3 +35,8 @@ export const GENDER = {
   MALE: 'male',
   FEMALE: 'female'
 }
+
+export const MATERIAL_CATEGORY = {
+  FLOWER:'flower',
+  ACCESSORY:'accessory'
+}

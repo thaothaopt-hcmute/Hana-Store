@@ -14,6 +14,11 @@ export const asyncTypes = (action) => ({
   END: `${action}_END`,
 });
 // Actions
+export const MATERIAL_STORE = {
+  GET_ALL_MATERIAL: 'GET_ALL_MATERIAL',
+  SEARCH_MATERIAL: 'SEARCH_MATERIAL'
+};
+
 export const DBROOT = {
   INIT_DATA: 'INIT_DATA'
 }

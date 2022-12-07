@@ -8,7 +8,7 @@ import NavigationServices from 'utils/navigationServices';
 import SCREENS_NAME from 'constants/screensName';
 // import {NAMESPACE} from './Home.constants';
 
-function HomeView({idioms, onPressIdiomItem}) {
+function HomeView({idioms, onPressIdiomItem, onPressToWarehouse}) {
   return (
     <AppContainer>
       <View style={styles.container}>
@@ -20,7 +20,7 @@ function HomeView({idioms, onPressIdiomItem}) {
             label={'Staffs'}
             imageSource={STAFFS}
           />
-          <FuncItem label={'Store'} imageSource={WAREHOUSE} />
+          <FuncItem label={'Store'} imageSource={WAREHOUSE} onPress={onPressToWarehouse}/>
         </View>
         <View style={styles.row2}>
           <FuncItem label={'Statistics'} imageSource={DATA_ANALYTICS} />

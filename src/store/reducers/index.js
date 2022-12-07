@@ -1,6 +1,7 @@
 import {combineReducers} from 'redux';
 
 // Reducer Imports
+import materialStoreReducer from './materialStoreReducer';
 import authReducer from './authReducer';
 import idiomsReducer from './idiomsReducer';
 import otherReducer from './otherReducer';
@@ -35,6 +36,7 @@ const dbRootPersistConfig = {
 
 const rootReducer = combineReducers({
   // Reducers
+  materialStore: materialStoreReducer,
   auth: persistReducer(authPersistConfig, authReducer),
   idioms: persistReducer(idiomsPersistConfig, idiomsReducer),
   other: otherReducer,

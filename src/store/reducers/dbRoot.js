@@ -4,6 +4,7 @@ const initialState = {
   // TODO
   users: [],
   stores: [],
+  material: [],
 };
 
 const dbRoot = (state = initialState, action) => {
@@ -14,6 +15,7 @@ const dbRoot = (state = initialState, action) => {
         users: action.payload.users,
         stores: action.payload.stores,
         statistics: action.payload.statistics,
+        material: action.payload.material,
       };
     }
     default:
