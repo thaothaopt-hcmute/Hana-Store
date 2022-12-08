@@ -87,8 +87,9 @@ const dbRoot = (state = initialState, action) => {
         );
         const timeWorkUser = state.workTime[userId] || {};
         timeWorkUser[day] = totalTimeInDay;
+        state.workTime[userId] = timeWorkUser;
       }
-
+      console.warn(state.workTime);
       return {
         ...state,
         workSheet: {...state.workSheet},
