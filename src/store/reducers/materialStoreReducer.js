@@ -66,6 +66,12 @@ const materialStoreReducer = (state = initialState, action) => {
         ),
       };
     }
+    case MATERIAL_STORE.ADD_NEW: {
+      return {
+        ...state,
+        material: state.material.push(action.payload)
+      };
+    }
     default:
       return state;
   }

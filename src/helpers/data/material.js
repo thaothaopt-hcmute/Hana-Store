@@ -20,7 +20,7 @@ export const MATERIAL = [
     price: 10, // $
     count: 5,
     sample_image:
-      'http://organicgroup.com.vn/upload/images/nuoc-la-oliu-organic-organic-olive-leaf-hydrosol.png',
+      'https://bio-norm.com/wp-content/uploads/2020/09/olive-leaf-Extract-3.jpg',
     good_image: [],
     supplierID: 'SUPPL01',
     category: MATERIAL_CATEGORY.ACCESSORY,

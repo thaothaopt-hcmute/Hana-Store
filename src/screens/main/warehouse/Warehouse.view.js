@@ -5,6 +5,7 @@ import styles from './Warehouse.styles';
 import SearchBox from 'components/SearchBox';
 import MaterialItem from './components/MaterialItem';
 import EmptyListComponent from 'components/EmptyListComponent';
+import { FAB } from '@rneui/themed';
 // import {NAMESPACE} from './Warehouse.constants';
 
 function WarehouseView({onChangeText, foundMaterial, onPressItem}) {
@@ -31,6 +32,7 @@ function WarehouseView({onChangeText, foundMaterial, onPressItem}) {
         style={styles.flatlist}
         ListEmptyComponent={_ListEmptyComponent}
       />
+    
     </View>
   );
 }

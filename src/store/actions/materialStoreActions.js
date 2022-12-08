@@ -17,3 +17,8 @@ export const getMaterialDetailRequest = payload => ({
     type: MATERIAL_STORE.UPDATE_MATERIAL,
     payload,
   });
+
+  export const addNewMaterialRequest = payload => ({
+    type: MATERIAL_STORE.ADD_NEW,
+    payload,
+  });

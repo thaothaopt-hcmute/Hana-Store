@@ -1,9 +1,11 @@
 import * as React from 'react';
+import {Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
 import NavigationServices from 'utils/navigationServices';
 import SCREENS_NAME from 'constants/screensName';
 // Screen Import
+import AddNewMaterialContainer from 'screens/main/addNewMaterial/AddNewMaterial.container';
 import StatisticDeatilContainer from 'screens/main/statisticDeatil/StatisticDeatil.container';
 import StatisticsContainer from 'screens/main/statistics/Statistics.container';
 import MaterialDetailContainer from 'screens/main/materialDetail/MaterialDetail.container';
@@ -19,6 +21,7 @@ import SignInContainer from 'screens/auth/signIn/SignIn.container';
 import GetStartContainer from 'screens/getStart/GetStart.container';
 import {checkIsSelectedIdiomsSelector} from 'store/selectors/idiomsSelector';
 import useSelectorShallow from 'hooks/useSelectorShallowEqual';
+import AppButton from 'components/AppButton';
 const Stack = createStackNavigator();
 
 function RootNavigator({onNavigationStateChange}) {
@@ -45,12 +48,44 @@ function RootNavigator({onNavigationStateChange}) {
           <Stack.Screen name={SCREENS_NAME.DUMMY} component={DummyContainer} />
         )}
         {/* Plop screen */}
-				<Stack.Screen name={ SCREENS_NAME.STATISTIC_DEATIL } component={ StatisticDeatilContainer } />
-				<Stack.Screen name={ SCREENS_NAME.STATISTICS } component={ StatisticsContainer } />
-				<Stack.Screen name={ SCREENS_NAME.MATERIAL_DETAIL } component={ MaterialDetailContainer } />
-				<Stack.Screen name={ SCREENS_NAME.WAREHOUSE } component={ WarehouseContainer } />
-				<Stack.Screen name={ SCREENS_NAME.USER_DETAIL } component={ UserDetailContainer } />
-				<Stack.Screen name={ SCREENS_NAME.LIST_STAFF } component={ ListStaffContainer } />
+        <Stack.Screen
+          name={SCREENS_NAME.ADD_NEW_MATERIAL}
+          component={AddNewMaterialContainer}
+        />
+        <Stack.Screen
+          name={SCREENS_NAME.STATISTIC_DEATIL}
+          component={StatisticDeatilContainer}
+        />
+        <Stack.Screen
+          name={SCREENS_NAME.STATISTICS}
+          component={StatisticsContainer}
+        />
+        <Stack.Screen
+          name={SCREENS_NAME.MATERIAL_DETAIL}
+          component={MaterialDetailContainer}
+        />
+        <Stack.Screen
+          name={SCREENS_NAME.WAREHOUSE}
+          options={{
+            headerRight: () => (
+              <Text
+                onPress={() =>
+                  NavigationServices.navigate(SCREENS_NAME.ADD_NEW_MATERIAL)
+                }>
+                Add
+              </Text>
+            ),
+          }}
+          component={WarehouseContainer}
+        />
+        <Stack.Screen
+          name={SCREENS_NAME.USER_DETAIL}
+          component={UserDetailContainer}
+        />
+        <Stack.Screen
+          name={SCREENS_NAME.LIST_STAFF}
+          component={ListStaffContainer}
+        />
         <Stack.Screen
           name={SCREENS_NAME.SAVED_IDIOMS}
           component={SavedIdiomsContainer}
@@ -66,10 +101,7 @@ function RootNavigator({onNavigationStateChange}) {
           component={HomeContainer}
           options={{headerShown: false}}
         />
-        <Stack.Screen
-          name={SCREENS_NAME.SIGN_IN}
-          component={SignInContainer}
-        />
+        <Stack.Screen name={SCREENS_NAME.SIGN_IN} component={SignInContainer} />
         {/* <Stack.Screen
           options={{headerShown: false}}
           name={SCREENS_NAME.MAIN}
