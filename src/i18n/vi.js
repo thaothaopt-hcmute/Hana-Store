@@ -1,6 +1,16 @@
 import {Platform} from 'react-native';
 
 export default {
+  loginToStore: 'Đăng nhập vào cửa hàng',
+  staffID: 'Mã nhân viên',
+  workingStaffs: 'Nhân viên đang làm việc',
+  checkin: 'Vào cửa hàng',
+  checkout: 'Ra về',
+
+
+  listStaff:'Danh sách nhân viên',
+
+
   common: {
     name: 'Tên',
     email: 'Email',

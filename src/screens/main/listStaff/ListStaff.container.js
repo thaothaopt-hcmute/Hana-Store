@@ -10,7 +10,7 @@ export default function ListStaffContainer({navigation}) {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: getString(`${NAMESPACE}.title`),
+      title: getString('listStaff'),
     });
   }, [navigation]);
 

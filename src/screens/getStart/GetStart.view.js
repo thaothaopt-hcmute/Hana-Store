@@ -17,6 +17,7 @@ import {useActions} from 'hooks/useActions';
 import {checkInCheckOutWorkSheet} from 'store/actions/dbRootActions';
 import moment from 'moment';
 import {WORK_TYPE} from 'constants/appConstants';
+import { getString } from 'utils/i18n';
 // import {NAMESPACE} from './GetStart.constants';
 
 function GetStartView({onPressLoginToStore}) {
@@ -56,7 +57,7 @@ function GetStartView({onPressLoginToStore}) {
           <EnterInfoBox
             value={searchText}
             onChangeText={setSearchText}
-            label={'Staff ID'}
+            label={getString('staffID')}
             placeholder={'Pxxxxxxx'}
           />
           <View style={styles.buttonRow}>
@@ -68,7 +69,7 @@ function GetStartView({onPressLoginToStore}) {
                 });
               }}
               disabled={!searchItem || canCheckOut}
-              title={'Check in'}
+              title={getString('checkin')}
             />
             <AppButton
               onPress={() => {
@@ -77,7 +78,7 @@ function GetStartView({onPressLoginToStore}) {
                   isCheckIn: false,
                 });
               }}
-              title={'Check out'}
+              title={getString('checkout')}
               disabled={!canCheckOut}
             />
           </View>
@@ -94,7 +95,7 @@ function GetStartView({onPressLoginToStore}) {
           data={USERS}
         />
         {/* <AppText>Vào quản lý</AppText> */}
-        <AppButton title={'Login to Store'} onPress={onPressLoginToStore} />
+        <AppButton title={getString('loginToStore')} onPress={onPressLoginToStore} />
       </View>
     </AppContainer>
   );

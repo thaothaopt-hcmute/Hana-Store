@@ -8,6 +8,7 @@ import EmptyList from 'components/EmptyList';
 import {useSelector} from 'react-redux';
 import moment from 'moment';
 import {getWorkSheetOfUserByDaySelector} from 'store/selectors/dbRootSelector';
+import { getString } from 'utils/i18n';
 
 const Item = ({item, onPress, selectedItem}) => {
   const workSheet = useSelector((state) =>
@@ -58,7 +59,7 @@ function WorkingStaffs({data, onPressItem, selectedItem}) {
   );
   return (
     <View style={styles.container}>
-      <AppText>WorkingStaffs</AppText>
+      <AppText>{getString('workingStaffs')}</AppText>
       <FlatList
         style={styles.list}
         data={data}

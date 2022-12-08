@@ -1,4 +1,13 @@
 export default {
+  loginToStore:'Login to Store',
+  staffID: 'Staff ID',
+  workingStaffs:'Working Staffs',
+  checkin: 'Check in',
+  checkout: 'Check out',
+
+
+  listStaff:'List staffs',
+
   common: {
     name: 'Name',
     email: 'Email',

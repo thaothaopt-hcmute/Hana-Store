@@ -3,19 +3,21 @@ import * as RNLocalize from 'react-native-localize';
 
 import en from '../i18n/en';
 import vi from '../i18n/vi';
+import ja from '../i18n/ja';
+
 
 const locales = RNLocalize.getLocales();
 
 if (Array.isArray(locales)) {
-  // I18n.locale = locales[0].languageCode;
-  // I18n.locale = 'ja';
-  I18n.locale = 'vi';
+  I18n.locale = locales[0].languageCode;
+  console.log(locales[0]);
 }
 
 I18n.fallbacks = true;
 I18n.translations = {
   en,
   vi,
+  ja
 };
 export const getString = (param, mapObj) => {
   if (mapObj) {
