@@ -4,7 +4,7 @@ import {
   ActivityIndicator,
   KeyboardAvoidingView,
   ScrollView,
-  Platform
+  Platform,
 } from 'react-native';
 import AppText from 'components/AppText';
 import styles from './MaterialDetail.styles';
@@ -37,8 +37,8 @@ function MaterialDetailView({materialDetail, onPressSubmit}) {
 
   return (
     <ScrollView style={styles.container}>
-      <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"}
->
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <Image
           source={{uri: sample_image}}
           style={styles.image}
