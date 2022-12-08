@@ -1,11 +1,12 @@
 import {StyleSheet} from 'react-native';
 import {
-    BORDER_RADIUS_BUTTON,
+  BORDER_RADIUS_BUTTON,
   DEFAULT_PADDING_VERTICAL,
   DEFAULT_PADDING_HORIZONTAL,
 } from 'constants/size';
 import {
   COLOR_BUTTON_BACKGROUND,
+  COLOR_DISABLED,
   COLOR_LIGHT_CONTENT,
   COLOR_TEXT_PRIMARY,
 } from 'constants/colors';
@@ -19,12 +20,15 @@ export default StyleSheet.create({
     margin: DEFAULT_PADDING_HORIZONTAL,
     alignItems: 'center',
     justifyContent: 'center',
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   title: {
     color: COLOR_LIGHT_CONTENT,
     fontSize: FONT_SIZE.NORMAL,
     fontFamily: FONT_FAMILY.BOLD,
-    paddingHorizontal: DEFAULT_PADDING_HORIZONTAL
+    paddingHorizontal: DEFAULT_PADDING_HORIZONTAL,
+  },
+  disabled: {
+    backgroundColor: COLOR_DISABLED,
   },
 });

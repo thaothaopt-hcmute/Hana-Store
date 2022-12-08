@@ -14,3 +14,8 @@ export const deActivateUser = (payload) => ({
   type: DBROOT.DEACTIVATE_USER,
   payload,
 });
+
+export const checkInCheckOutWorkSheet = (payload) => ({
+  type: DBROOT.WORK_SHEET_CHECKIN_CHECKOUT,
+  payload,
+});

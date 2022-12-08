@@ -26,4 +26,8 @@ export default StyleSheet.create({
   list: {
     flex: 1,
   },
+  badge: {
+    position: 'absolute',
+    right: 0,
+  },
 });

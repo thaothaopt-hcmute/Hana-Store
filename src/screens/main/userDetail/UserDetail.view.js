@@ -12,7 +12,7 @@ import AppButton from 'components/AppButton';
 
 function UserDetailView({onPressSubmit}) {
   const {handleChange, touched, values, errors, handleSubmit} = useFormik({
-    initialValues: {fullname: '', dob:''},
+    initialValues: {fullname: '', dob: ''},
     validationSchema: USER_DETAIL_SCHEME,
     validateOnChange: false,
     onSubmit: onPressSubmit,
@@ -21,9 +21,6 @@ function UserDetailView({onPressSubmit}) {
     <ScrollView style={styles.root}>
       <View style={styles.container}>
         <Avatar
-          onPress={() => {
-            console.warn('Click');
-          }}
           size={scale(100)}
           rounded
           source={{uri: 'https://randomuser.me/api/portraits/men/36.jpg'}}>
@@ -31,30 +28,29 @@ function UserDetailView({onPressSubmit}) {
             <AppText>Edit</AppText>
           </TouchableOpacity>
         </Avatar>
-       
       </View>
       <EnterInfoBox
-          label={'Full name'}
-          onChangeText={handleChange('quantity')}
-          error={touched.fullname && errors.fullname}
-          value={values.fullname}
-          messageError={errors.fullname}
-          placeholder={'...'}
-        />
-        <EnterInfoBox
-          label={'Birthday'}
-          onChangeText={handleChange('dob')}
-          error={touched.dob && errors.dob}
-          value={values.dob}
-          messageError={errors.dob}
-          placeholder={'...'}
-        />
+        label={'Full name'}
+        onChangeText={handleChange('quantity')}
+        error={touched.fullname && errors.fullname}
+        value={values.fullname}
+        messageError={errors.fullname}
+        placeholder={'...'}
+      />
+      <EnterInfoBox
+        label={'Birthday'}
+        onChangeText={handleChange('dob')}
+        error={touched.dob && errors.dob}
+        value={values.dob}
+        messageError={errors.dob}
+        placeholder={'...'}
+      />
 
-        <AppButton
+      <AppButton
         title={'Submit'}
         style={styles.button}
         onPress={handleSubmit}
-        />
+      />
     </ScrollView>
   );
 }

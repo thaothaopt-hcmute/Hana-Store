@@ -1,10 +1,11 @@
-import {USER_STATUS} from 'constants/appConstants';
+import {USER_STATUS, WORK_TYPE} from 'constants/appConstants';
+import moment from 'moment';
 import {DBROOT} from 'store/actionsType';
 
 const initialState = {
-  // TODO
   initialized: false,
   users: [],
+  workSheet: {},
   stores: [],
   material: [],
 };
@@ -18,6 +19,7 @@ const dbRoot = (state = initialState, action) => {
         stores: action.payload.stores,
         statistics: action.payload.statistics,
         material: action.payload.material,
+        workSheet: action.payload.workSheet,
         initialized: true,
       };
     }
@@ -42,6 +44,25 @@ const dbRoot = (state = initialState, action) => {
           }
           return e;
         }),
+      };
+    }
+    case DBROOT.WORK_SHEET_CHECKIN_CHECKOUT: {
+      const isCheckIn = action.payload.isCheckIn;
+      const userId = action.payload.userId;
+      const timeMoment = moment();
+      const day = timeMoment.format('YYYY-MM-DD');
+      const userWorkSheet = state.workSheet[userId] || {};
+
+      const listWorkInDay = userWorkSheet?.[day] || [];
+      _listWorkInDay = listWorkInDay.concat({
+        time: timeMoment.toDate().getTime(),
+        type: isCheckIn ? WORK_TYPE.CHECK_IN : WORK_TYPE.CHECK_OUT,
+      });
+      userWorkSheet[day] = _listWorkInDay;
+      state.workSheet[userId] = userWorkSheet;
+      return {
+        ...state,
+        workSheet: {...state.workSheet},
       };
     }
     default:

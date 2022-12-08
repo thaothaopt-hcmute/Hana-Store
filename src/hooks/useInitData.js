@@ -3,7 +3,8 @@ import React from 'react';
 import {initData} from 'store/actions/dbRootActions';
 import {USERS} from 'helpers/data/users';
 import {isInitializedSelector} from 'store/selectors/dbRootSelector';
-import { MATERIAL } from 'helpers/data/material';
+import {MATERIAL} from 'helpers/data/material';
+import {workSheet} from 'helpers/data/workSheet';
 
 export function useInitData() {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ export function useInitData() {
     // if (initialized) {
     //   return () => {};
     // }
-    dispatch(initData({users: USERS}));
+    dispatch(initData({users: USERS, workSheet}));
     if (initialized) {
       return () => {};
     }

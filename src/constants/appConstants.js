@@ -41,6 +41,11 @@ export const USER_STATUS = {
   DEACTIVATED: 'Deactivated',
 };
 
+export const WORK_TYPE = {
+  CHECK_IN: 'CHECK_IN',
+  CHECK_OUT: 'CHECK_OUT',
+};
+
 export const MATERIAL_CATEGORY = {
   FLOWER: 'flower',
   ACCESSORY: 'accessory',
