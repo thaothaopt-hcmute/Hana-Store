@@ -19,20 +19,25 @@ import {scalePortrait} from 'utils/responsive';
 
 function MaterialDetailView({materialDetail, onPressSubmit}) {
   const {count, des, sample_image, last_import, note} = materialDetail;
-  const {handleChange, touched, values, errors, handleSubmit} = useFormik({
-    initialValues: {quantity: '', note: ''},
+  const {
+    handleChange,
+    touched,
+    values,
+    errors,
+    handleSubmit,
+    setFieldValue,
+    resetForm,
+  } = useFormik({
+    initialValues: {quantity: 0, note: ''},
     validationSchema: MATERIAL_DETAIL_SCHEME,
-    validateOnChange: false,
+    validateOnChange: true,
     onSubmit: onPressSubmit,
   });
 
-  const [isSubmitted, setIsSubmitted] = React.useState(false);
-
-  const EnterInfoBoxRef = React.useRef(null);
-  const _handleSubmit = React.useCallback(() => {
-    handleSubmit();
-    EnterInfoBoxRef?.current?.inputRef?.current.clear();
-    console.log('EnterInfoBoxRef:', EnterInfoBoxRef.current);
+  const resetAllValues = React.useCallback(() => {
+    // handleSubmit();
+    // setFieldValue('quantity', 0);
+    // setFieldValue('note', '');
   }, []);
 
   return (
@@ -71,24 +76,28 @@ function MaterialDetailView({materialDetail, onPressSubmit}) {
             label={'Quantity'}
             onChangeText={handleChange('quantity')}
             error={touched.quantity && errors.quantity}
-            value={isSubmitted ? '' : values.quantity}
+            value={values.quantity}
             messageError={errors.quantity}
             placeholder={'...'}
             keyboardType={'numeric'}
-            ref={EnterInfoBoxRef}
           />
 
           <EnterInfoBox
             label={'Note'}
             onChangeText={handleChange('note')}
             error={touched.note && errors.note}
-            value={isSubmitted ? '' : values.note}
+            value={values.note}
             messageError={errors.note}
             placeholder={'...'}
-            ref={EnterInfoBoxRef}
           />
 
-          <AppButton title={'Submit'} onPress={_handleSubmit} />
+          <AppButton
+            title={'Submit'}
+            onPress={() => {
+              handleSubmit();
+              resetAllValues();
+            }}
+          />
         </View>
       </KeyboardAvoidingView>
     </ScrollView>

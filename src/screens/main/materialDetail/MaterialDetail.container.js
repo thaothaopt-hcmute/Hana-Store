@@ -24,7 +24,7 @@ export default function MaterialDetailContainer({navigation, route}) {
   const actions = useActions({
     getMaterialDetailRequest,
     updateMaterialDetailRequest,
-    getAllMaterialSubmit
+    getAllMaterialSubmit,
   });
 
   const materialDetail = useSelectorShallow(getMaterialDetailSelector);
@@ -33,24 +33,27 @@ export default function MaterialDetailContainer({navigation, route}) {
     actions.getMaterialDetailRequest(params.id);
   }, [actions]);
 
-  const onPressSubmit = useCallback((values) => {
-    console.log('values::', values, materialDetail);
-    actions.updateMaterialDetailRequest({
-      id: materialDetail.id,
-      count: parseInt(values.quantity) + parseInt(materialDetail.count),
-      last_import: moment().format('YYYY-MM-DD hh:mm:ss a'),
-    });
-    Alert.alert('Alert', 'Update successful', [
-      {
-        text: 'Yes',
-        onPress: () => {
-          actions.getAllMaterialSubmit();
-          actions.getMaterialDetailRequest(params.id);
-          // NavigationServices.goBack();
+  const onPressSubmit = useCallback(
+    (values) => {
+      actions.updateMaterialDetailRequest({
+        id: materialDetail.id,
+        count: parseInt(values.quantity) + parseInt(materialDetail.count),
+        last_import: moment().format('YYYY-MM-DD hh:mm:ss a'),
+        note: values.note,
+      });
+      Alert.alert('Alert', 'Update successful', [
+        {
+          text: 'Yes',
+          onPress: () => {
+            actions.getAllMaterialSubmit();
+            actions.getMaterialDetailRequest(params.id);
+            NavigationServices.goBack();
+          },
         },
-      },
-    ]);
-  }, [actions, materialDetail]);
+      ]);
+    },
+    [actions, materialDetail],
+  );
 
   return (
     <MaterialDetailView

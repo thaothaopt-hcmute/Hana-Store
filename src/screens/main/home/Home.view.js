@@ -20,10 +20,20 @@ function HomeView({idioms, onPressIdiomItem, onPressToWarehouse}) {
             label={'Staffs'}
             imageSource={STAFFS}
           />
-          <FuncItem label={'Store'} imageSource={WAREHOUSE} onPress={onPressToWarehouse}/>
+          <FuncItem
+            label={'Store'}
+            imageSource={WAREHOUSE}
+            onPress={onPressToWarehouse}
+          />
         </View>
         <View style={styles.row2}>
-          <FuncItem label={'Statistics'} imageSource={DATA_ANALYTICS} />
+          <FuncItem
+            label={'Statistics'}
+            imageSource={DATA_ANALYTICS}
+            onPress={() => {
+              NavigationServices.navigate(SCREENS_NAME.STATISTICS);
+            }}
+          />
           <FuncItem label={'POS'} imageSource={CASHIER} />
         </View>
       </View>

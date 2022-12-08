@@ -9,16 +9,16 @@ const initialState = {
   materialDetail: {},
 };
 
-function handleFindMaterial(material = [], preList = [], key){
+function handleFindMaterial(material = [], preList = [], key) {
   if (key) {
     preList = material.filter((e) => e.name.includes(key.toLowerCase()));
     return preList || [];
   }
-};
+}
 
-function getMaterialDetail (list = [], itemID){
+function getMaterialDetail(list = [], itemID) {
   return list.find((e) => e.id === itemID);
-};
+}
 
 function updateMaterialDetail(list = [], data) {
   // const indexNeedToUpdate = list.findIndex(e => e.id === item.id);
@@ -27,11 +27,16 @@ function updateMaterialDetail(list = [], data) {
 
   return list.map((e) => {
     if (e.id === data.id) {
-      return {...e, count: data.count, last_import: data.last_import};
+      return {
+        ...e,
+        count: data.count,
+        last_import: data.last_import,
+        note: data.note,
+      };
     }
     return e;
   });
-};
+}
 
 const materialStoreReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -55,7 +60,10 @@ const materialStoreReducer = (state = initialState, action) => {
       return {
         ...state,
         material: updateMaterialDetail(state.material, action.payload),
-        foundMaterial: updateMaterialDetail(state.foundMaterial, action.payload),
+        foundMaterial: updateMaterialDetail(
+          state.foundMaterial,
+          action.payload,
+        ),
       };
     }
     default:
