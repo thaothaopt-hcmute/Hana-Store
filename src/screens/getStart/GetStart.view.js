@@ -5,6 +5,8 @@ import styles from './GetStart.styles';
 import AppContainer from 'components/AppContainer';
 import EnterInfoBox from 'components/EnterInfoBox';
 import AppButton from 'components/AppButton';
+import WorkingStaffs from 'components/WorkingStaffs';
+import {USERS} from 'helpers/data/users';
 // import {NAMESPACE} from './GetStart.constants';
 
 function GetStartView({onPressLoginToStore}) {
@@ -18,9 +20,8 @@ function GetStartView({onPressLoginToStore}) {
             <AppButton title={'Check out'} />
           </View>
         </View>
-        <AppText>
-          Vào quản lý
-        </AppText>
+        <WorkingStaffs data={USERS} />
+        <AppText>Vào quản lý</AppText>
         <AppButton title={'Login to Store'} onPress={onPressLoginToStore} />
       </View>
     </AppContainer>
