@@ -30,3 +30,12 @@ export const workSheet = {
     ],
   },
 };
+
+export const workTime = {
+  P1234503: {
+    '2022-12-08': 60 * 60 * 60 * 8, // Số mili giây: Kết qủa trên là đã làm dc 8 tiếng
+  },
+  P1234502: {
+    '2022-12-08': 60 * 60 * 60 * 7,
+  },
+};
