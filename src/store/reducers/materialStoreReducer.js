@@ -1,6 +1,7 @@
-import {MATERIAL} from 'helpers/data/material';
 import {MATERIAL_STORE} from 'store/actionsType';
 import {createSelector} from 'reselect';
+import {STATUS} from 'constants/appConstants';
+import {MATERIAL} from 'helpers/data/material';
 
 const initialState = {
   // TODO
@@ -69,7 +70,43 @@ const materialStoreReducer = (state = initialState, action) => {
     case MATERIAL_STORE.ADD_NEW: {
       return {
         ...state,
-        material: state.material.push(action.payload)
+        material: state.material.push(action.payload),
+      };
+    }
+    case MATERIAL_STORE.DELETE: {
+      return {
+        ...state,
+        material: state.material.filter((e) => e.id !== action.payload.id),
+        foundMaterial: state.material.filter((e) => e.id !== action.payload.id),
+      };
+    }
+    case MATERIAL_STORE.DEACTIVATE: {
+      return {
+        ...state,
+        material: state.material.map((e) => {
+          if (e.id === action.payload.id) {
+            return {
+              ...e,
+              status:
+                action.payload.currentStatus === STATUS.DEACTIVATED
+                  ? STATUS.ACTIVE
+                  : STATUS.DEACTIVATED,
+            };
+          }
+          return e;
+        }),
+        foundMaterial: state.material.map((e) => {
+          if (e.id === action.payload.id) {
+            return {
+              ...e,
+              status:
+                action.payload.currentStatus === STATUS.DEACTIVATED
+                  ? STATUS.ACTIVE
+                  : STATUS.DEACTIVATED,
+            };
+          }
+          return e;
+        }),
       };
     }
     default:

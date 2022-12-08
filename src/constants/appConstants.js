@@ -36,7 +36,7 @@ export const GENDER = {
   FEMALE: 'female',
 };
 
-export const USER_STATUS = {
+export const STATUS = {
   ACTIVE: 'Active',
   DEACTIVATED: 'Deactivated',
 };

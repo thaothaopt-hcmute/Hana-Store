@@ -18,7 +18,12 @@ export const getMaterialDetailRequest = payload => ({
     payload,
   });
 
-  export const addNewMaterialRequest = payload => ({
-    type: MATERIAL_STORE.ADD_NEW,
+  export const deactivateMaterialRequest = payload => ({
+    type: MATERIAL_STORE.DEACTIVATE,
+    payload,
+  });
+
+  export const deleteMaterialRequest = payload => ({
+    type: MATERIAL_STORE.DELETE,
     payload,
   });

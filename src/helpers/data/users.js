@@ -1,4 +1,4 @@
-import {GENDER, USER_ROLE, USER_STATUS} from 'constants/appConstants';
+import {GENDER, USER_ROLE, STATUS} from 'constants/appConstants';
 
 export const USERS = [
   {
@@ -11,7 +11,7 @@ export const USERS = [
     gender: GENDER.FEMALE,
     avatar: 'https://randomuser.me/api/portraits/women/57.jpg',
     salaryUnit: 1, // $/h
-    status: USER_STATUS.ACTIVE,
+    status: STATUS.ACTIVE,
   },
   {
     id: 'P1234502',
@@ -23,7 +23,7 @@ export const USERS = [
     avatar: '',
     gender: GENDER.MALE,
     salaryUnit: 1, // $/h
-    status: USER_STATUS.ACTIVE,
+    status: STATUS.ACTIVE,
   },
   {
     id: 'P1234501',
@@ -35,6 +35,6 @@ export const USERS = [
     gender: GENDER.FEMALE,
     avatar: '',
     salaryUnit: 1, // $/h
-    status: USER_STATUS.DEACTIVATED,
+    status: STATUS.DEACTIVATED,
   },
 ];

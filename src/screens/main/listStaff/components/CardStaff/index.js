@@ -6,7 +6,7 @@ import {ListItem} from '@rneui/themed';
 import AppButton from 'components/AppButton';
 import {Avatar} from '@rneui/base';
 import {scale} from 'utils/responsive';
-import {USER_STATUS} from 'constants/appConstants';
+import {STATUS} from 'constants/appConstants';
 
 function CardStaff({item, onPressItem, onPressDelete, onPressDisable}) {
   const {firstName, staffID, avatar, status, lastName, role, dob, gender} =
@@ -28,7 +28,7 @@ function CardStaff({item, onPressItem, onPressDelete, onPressDisable}) {
     [item, onPressDisable],
   );
 
-  const isDeactivated = status === USER_STATUS.DEACTIVATED;
+  const isDeactivated = status === STATUS.DEACTIVATED;
 
   return (
     <ListItem.Swipeable

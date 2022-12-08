@@ -10,7 +10,7 @@ import {useSearchData} from 'hooks/useSearchData';
 import {DEFAULT_PADDING_VERTICAL} from 'constants/size';
 import {useActions} from 'hooks/useActions';
 import {deActivateUser, deleteUser} from 'store/actions/dbRootActions';
-import {USER_STATUS} from 'constants/appConstants';
+import {STATUS} from 'constants/appConstants';
 // import {NAMESPACE} from './ListStaff.constants';
 
 function ListStaffView({listStaff}) {
@@ -50,7 +50,7 @@ function ListStaffView({listStaff}) {
     Alert.alert(
       'Alert',
       `Are you sure that you want to ${
-        currentStatus === USER_STATUS.ACTIVE ? 'deactivate' : 'active'
+        currentStatus === STATUS.ACTIVE ? 'deactivate' : 'active'
       } this item?`,
       [
         {

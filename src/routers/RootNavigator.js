@@ -22,6 +22,8 @@ import GetStartContainer from 'screens/getStart/GetStart.container';
 import {checkIsSelectedIdiomsSelector} from 'store/selectors/idiomsSelector';
 import useSelectorShallow from 'hooks/useSelectorShallowEqual';
 import AppButton from 'components/AppButton';
+import { FONT_FAMILY, FONT_SIZE } from 'constants/appFonts';
+import { DEFAULT_PADDING_HORIZONTAL } from 'constants/size';
 const Stack = createStackNavigator();
 
 function RootNavigator({onNavigationStateChange}) {
@@ -69,6 +71,11 @@ function RootNavigator({onNavigationStateChange}) {
           options={{
             headerRight: () => (
               <Text
+              style={{
+                fontSize: FONT_SIZE.FIT,
+                fontFamily: FONT_FAMILY.BOLD,
+                paddingHorizontal: DEFAULT_PADDING_HORIZONTAL
+              }}
                 onPress={() =>
                   NavigationServices.navigate(SCREENS_NAME.ADD_NEW_MATERIAL)
                 }>

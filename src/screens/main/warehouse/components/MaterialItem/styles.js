@@ -1,5 +1,5 @@
 import {FONT_FAMILY, FONT_SIZE} from 'constants/appFonts';
-import { COLOR_BACKGROUND, COLOR_BUTTON_BACKGROUND, COLOR_DELETE_BTN, COLOR_SECONDARY } from 'constants/colors';
+import { COLOR_BACKGROUND, COLOR_BUTTON_BACKGROUND, COLOR_DELETE_BTN, COLOR_DISABLED, COLOR_SECONDARY } from 'constants/colors';
 import {DEFAULT_PADDING_HORIZONTAL} from 'constants/size';
 import {StyleSheet} from 'react-native';
 import {scalePortrait} from 'utils/responsive';
@@ -43,5 +43,17 @@ export default StyleSheet.create({
     backgroundColor: COLOR_BUTTON_BACKGROUND,
     paddingHorizontal: 5,
     alignSelf: 'center'
+  },
+  wrapDeactivated: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    backgroundColor: COLOR_DISABLED,
+    padding: scalePortrait(4),
+    borderRadius: scalePortrait(4),
+  },
+  txtStatus: {
+    color: 'white',
+    fontStyle: 'italic',
   },
 });

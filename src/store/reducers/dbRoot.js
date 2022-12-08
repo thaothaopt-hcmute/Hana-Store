@@ -1,4 +1,4 @@
-import {USER_STATUS, WORK_TYPE} from 'constants/appConstants';
+import {STATUS, WORK_TYPE} from 'constants/appConstants';
 import {chunk} from 'lodash';
 import moment from 'moment';
 import {DBROOT} from 'store/actionsType';
@@ -40,9 +40,9 @@ const dbRoot = (state = initialState, action) => {
             return {
               ...e,
               status:
-                action.payload.currentStatus === USER_STATUS.DEACTIVATED
-                  ? USER_STATUS.ACTIVE
-                  : USER_STATUS.DEACTIVATED,
+                action.payload.currentStatus === STATUS.DEACTIVATED
+                  ? STATUS.ACTIVE
+                  : STATUS.DEACTIVATED,
             };
           }
           return e;

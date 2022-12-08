@@ -51,7 +51,7 @@ function HomeView({idioms, onPressIdiomItem, onPressToWarehouse, userInfo}) {
               NavigationServices.navigate(SCREENS_NAME.STATISTICS);
             }}
           />
-          <FuncItem label={'POS'} imageSource={CASHIER} />
+          {/* <FuncItem label={'POS'} imageSource={CASHIER} /> */}
         </View>
       </View>
     </AppContainer>
