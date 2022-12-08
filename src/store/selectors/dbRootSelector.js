@@ -15,7 +15,7 @@ export const getWorkSheetSelector = (state) =>
  * @returns
  */
 export const getWorkSheetOfUserByDaySelector = (state, userId, day) =>
-  getDbRootSelector(state).workSheet[userId]?.[day];
+  getDbRootSelector(state).workSheet?.[userId]?.[day];
 
 export const getWorkSheetOfUserSelector = (state, userId) =>
-  getDbRootSelector(state).workSheet[userId];
+  getDbRootSelector(state).workSheet?.[userId];
