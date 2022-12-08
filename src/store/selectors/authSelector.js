@@ -1,1 +1,1 @@
-// export const actionSelector = state => state.auth.data;
+export const getUserInfoSelector = state => state.auth.userInfo;

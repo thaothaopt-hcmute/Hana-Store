@@ -3,12 +3,12 @@ import styles from './styles';
 import {View, Image, TouchableOpacity} from 'react-native';
 import AppText from 'components/AppText';
 
-function FuncItem({label, imageSource, onPress}) {
+function FuncItem({label, imageSource, onPress, disable}) {
   const _onPress = useCallback(() => {
     typeof onPress === 'function' && onPress();
   }, [onPress]);
   return (
-    <TouchableOpacity style={styles.container} onPress={_onPress}>
+    <TouchableOpacity style={styles.container} onPress={_onPress} disabled={disable}>
       <Image source={imageSource} style={styles.image} />
       <AppText style={styles.labelText}>{label}</AppText>
     </TouchableOpacity>

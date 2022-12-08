@@ -93,7 +93,7 @@ function GetStartView({onPressLoginToStore}) {
           selectedItem={selectedItem}
           data={USERS}
         />
-        <AppText>Vào quản lý</AppText>
+        {/* <AppText>Vào quản lý</AppText> */}
         <AppButton title={'Login to Store'} onPress={onPressLoginToStore} />
       </View>
     </AppContainer>

@@ -3,6 +3,9 @@ import SignInView from './SignIn.view';
 import {NAMESPACE} from './SignIn.constants';
 import NavigationServices from 'utils/navigationServices';
 import SCREENS_NAME from 'constants/screensName';
+import {USERS} from 'helpers/data/users';
+import {useActions} from 'hooks/useActions';
+import {signInSubmit} from 'store/actions/authActions';
 
 export default function SignInContainer({navigation}) {
   useLayoutEffect(() => {
@@ -10,6 +13,10 @@ export default function SignInContainer({navigation}) {
       title: 'Sign In',
     });
   }, [navigation]);
+
+  const actions = useActions({
+    signInSubmit,
+  });
 
   const onPressSubmit = useCallback((values) => {
     // actions.signInSubmit({
@@ -21,8 +28,11 @@ export default function SignInContainer({navigation}) {
     //     }
     //   },
     // });
-    NavigationServices.resetActionTo(SCREENS_NAME.HOME);
-  }, []);
+    console.log('values>>', values);
+    const user = USERS.find((e) => e.staffID === values.staffID);
+    actions.signInSubmit(user)
+    NavigationServices.resetActionTo(SCREENS_NAME.HOME, values.staffID);
+  }, [actions]);
 
   const onPressLeft = useCallback(() => {
     NavigationServices.goBack();

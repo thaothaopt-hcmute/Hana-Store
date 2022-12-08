@@ -71,9 +71,10 @@ function AddNewMaterialView({onPressSubmit}) {
           style={styles.cameraBox}
           onPress={() => {
             launchImageLibrary(options, (res) => {
-              console.warn('>>>>openImagePickerAndResize', res.assets[0].uri);
-              setFieldValue('sample_image', res.assets[0].uri);
-              setImageUri(res.assets[0].uri);
+              if (res && res.assets) {
+                setFieldValue('sample_image', res?.assets[0]?.uri);
+                setImageUri(res?.assets[0]?.uri);
+              }
               // if (!err) {
               //   console.warn('mm');
               // }

@@ -30,7 +30,7 @@ export const DBROOT = {
 };
 
 export const AUTH = {
-  SIGN_IN: asyncTypes('AUTH/SIGN_IN'),
+  SIGN_IN: 'SIGN_IN'
 };
 
 export const IDIOMS = {

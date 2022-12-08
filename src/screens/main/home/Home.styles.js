@@ -14,4 +14,8 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  disableFuncView: {
+    backgroundColor: 'rgba(123,213,23,0.5)',
+    position: 'absolute'
+  },
 });

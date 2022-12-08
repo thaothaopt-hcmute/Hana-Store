@@ -1,9 +1,9 @@
-// import { AUTH } from 'store/actionsType';
+import { AUTH } from 'store/actionsType';
 
-// export const actionSubmit = payload => ({
-//   type: AUTH.ACTION.HANDLER,
-//   payload,
-// });
+export const signInSubmit = payload => ({
+  type: AUTH.SIGN_IN,
+  payload,
+});
 
 // export const actionSuccess = payload => ({
 //   type: AUTH.ACTION.SUCCESS,
