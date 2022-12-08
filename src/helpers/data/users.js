@@ -3,7 +3,7 @@ import {GENDER, USER_ROLE, USER_STATUS} from 'constants/appConstants';
 export const USERS = [
   {
     id: 'P1234503',
-    lastName: 'Le Thuy Linh',
+    lastName: 'Le Thuy',
     firstName: 'Linh',
     dob: '10/1/2000',
     role: USER_ROLE.EMP,
@@ -15,7 +15,7 @@ export const USERS = [
   },
   {
     id: 'P1234502',
-    lastName: 'Nguyen Hoang An',
+    lastName: 'Nguyen Hoang',
     firstName: 'An',
     dob: '1/10/2000',
     role: USER_ROLE.EMP,
@@ -27,7 +27,7 @@ export const USERS = [
   },
   {
     id: 'P1234501',
-    lastName: 'Pham Hoang Thi',
+    lastName: 'Pham Hoang ',
     firstName: 'Thi',
     dob: '12/11/1999',
     role: USER_ROLE.MANAGE,
