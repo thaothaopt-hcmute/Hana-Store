@@ -46,7 +46,7 @@ export default function MaterialDetailContainer({navigation, route}) {
         onPress: () => {
           actions.getAllMaterialSubmit();
           actions.getMaterialDetailRequest(params.id);
-          NavigationServices.goBack();
+          // NavigationServices.goBack();
         },
       },
     ]);

@@ -14,7 +14,7 @@ function EnterInfoBox({
   keyboardType,
   ...otherProps
 }) {
-  const inputRef = React.useRef();
+  const inputRef = React.useRef(null);
 
   return (
     <View style={styles.container}>
@@ -32,4 +32,4 @@ function EnterInfoBox({
   );
 }
 
-export default React.memo(EnterInfoBox);
+export default React.forwardRef(EnterInfoBox);
