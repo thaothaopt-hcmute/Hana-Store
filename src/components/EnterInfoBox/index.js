@@ -12,16 +12,21 @@ function EnterInfoBox({
   messageError,
   placeholder,
   keyboardType,
+  ...otherProps
 }) {
+  const inputRef = React.useRef();
+
   return (
     <View style={styles.container}>
       <AppText style={styles.labelText}>{label}</AppText>
       {error && <AppText style={styles.txtError}>{messageError}</AppText>}
       <Input
+        ref={inputRef}
         value={value}
         placeholder={placeholder}
         onChangeText={onChangeText}
         keyboardType={keyboardType || 'default'}
+        {...otherProps}
       />
     </View>
   );

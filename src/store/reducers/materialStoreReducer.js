@@ -16,14 +16,21 @@ function handleFindMaterial(material = [], preList = [], key){
   }
 };
 
-function getMaterialDetail (list = [], item){
-  return list.find((e) => e.id === item.id);
+function getMaterialDetail (list = [], itemID){
+  return list.find((e) => e.id === itemID);
 };
 
-function updateMaterialDetail(list = [], item) {
-  const indexNeedToUpdate = list.findIndex(e => e.id === item.id);
-  list[indexNeedToUpdate] = item;
-  return list;
+function updateMaterialDetail(list = [], data) {
+  // const indexNeedToUpdate = list.findIndex(e => e.id === item.id);
+  // list[indexNeedToUpdate] = item;
+  // return list;
+
+  return list.map((e) => {
+    if (e.id === data.id) {
+      return {...e, count: data.count, last_import: data.last_import};
+    }
+    return e;
+  });
 };
 
 const materialStoreReducer = (state = initialState, action) => {
@@ -48,6 +55,7 @@ const materialStoreReducer = (state = initialState, action) => {
       return {
         ...state,
         material: updateMaterialDetail(state.material, action.payload),
+        foundMaterial: updateMaterialDetail(state.foundMaterial, action.payload),
       };
     }
     default:

@@ -30,21 +30,22 @@ export default function MaterialDetailContainer({navigation, route}) {
   const materialDetail = useSelectorShallow(getMaterialDetailSelector);
 
   useEffect(() => {
-    actions.getMaterialDetailRequest(params);
-  }, []);
+    actions.getMaterialDetailRequest(params.id);
+  }, [actions]);
 
   const onPressSubmit = useCallback((values) => {
     console.log('values::', values, materialDetail);
     actions.updateMaterialDetailRequest({
-      ...materialDetail,
+      id: materialDetail.id,
       count: parseInt(values.quantity) + parseInt(materialDetail.count),
-      last_import: moment().utcOffset('+05:30').format('YYYY-MM-DD hh:mm:ss a'),
+      last_import: moment().format('YYYY-MM-DD hh:mm:ss a'),
     });
     Alert.alert('Alert', 'Update successful', [
       {
         text: 'Yes',
         onPress: () => {
           actions.getAllMaterialSubmit();
+          actions.getMaterialDetailRequest(params.id);
           NavigationServices.goBack();
         },
       },

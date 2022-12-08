@@ -24,6 +24,19 @@ function MaterialDetailView({materialDetail, onPressSubmit}) {
     validateOnChange: false,
     onSubmit: onPressSubmit,
   });
+
+  const [isSubmitted, setIsSubmitted]= React.useState(false)
+
+  const _handleSubmit=React.useCallback(()=>{
+    handleSubmit();
+    // EnterInfoBoxRef.current.clear();
+    console.log('EnterInfoBoxRef:',EnterInfoBoxRef.current);
+  },[])
+
+
+  const EnterInfoBoxRef= React.useRef();
+
+
   return (
     <ScrollView style={styles.container}>
       <Image
@@ -49,19 +62,19 @@ function MaterialDetailView({materialDetail, onPressSubmit}) {
             'From here are the necessary information to fill in when importing new goods'
           }
         </AppText>
-        <View style={styles.dropLine1} />
         
           <EnterInfoBox
             label={'Quantity'}
             onChangeText={handleChange('quantity')}
             error={touched.quantity && errors.quantity}
-            value={values.quantity}
+            value={isSubmitted ? '' : values.quantity}
             messageError={errors.quantity}
             placeholder={'...'}
             keyboardType={'numeric'}
+            ref={EnterInfoBoxRef}
           />
        
-        <AppButton title={'Submit'} onPress={handleSubmit} />
+        <AppButton title={'Submit'} onPress={_handleSubmit} />
       </View>
     </ScrollView>
   );
