@@ -51,7 +51,7 @@ function PosView({onPressLoginToStore}) {
   }, [selectedItem]);
 
   const findLetter=()=>{
-    let stringS = 'tìm kiếm ký tự đầu';
+    let stringS = 'Find first letter';
     let letter = '';
     stringS.trim();
     for(let i= 0;i<stringS.length-1;i++){
