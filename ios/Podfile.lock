@@ -274,6 +274,10 @@ PODS:
   - React-jsinspector (0.67.5)
   - React-logger (0.67.5):
     - glog
+  - react-native-image-picker (4.10.2):
+    - React-Core
+  - react-native-image-resizer (1.4.5):
+    - React-Core
   - react-native-netinfo (7.1.7):
     - React-Core
   - react-native-safe-area-context (3.3.2):
@@ -345,14 +349,14 @@ PODS:
     - React-perflogger (= 0.67.5)
   - RNCAsyncStorage (1.12.1):
     - React-Core
-  - RNDeviceInfo (8.4.8):
+  - RNDeviceInfo (8.7.1):
     - React-Core
-  - RNGestureHandler (2.2.0):
+  - RNGestureHandler (2.8.0):
     - React-Core
   - RNLocalize (2.1.7):
     - React-Core
-  - RNSVG (12.1.1):
-    - React
+  - RNSVG (12.5.0):
+    - React-Core
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -400,6 +404,8 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
+  - react-native-image-picker (from `../node_modules/react-native-image-picker`)
+  - react-native-image-resizer (from `../node_modules/react-native-image-resizer`)
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -475,6 +481,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
     :path: "../node_modules/react-native/ReactCommon/logger"
+  react-native-image-picker:
+    :path: "../node_modules/react-native-image-picker"
+  react-native-image-resizer:
+    :path: "../node_modules/react-native-image-resizer"
   react-native-netinfo:
     :path: "../node_modules/@react-native-community/netinfo"
   react-native-safe-area-context:
@@ -548,6 +558,8 @@ SPEC CHECKSUMS:
   React-jsiexecutor: e9895ccae253323ca70f693945fecbba091f0abd
   React-jsinspector: ec4fe4f65ccf9d67c8429dda955d3412db8a25ef
   React-logger: 85f4ef06b9723714b2dfa5b0e5502b673b271b58
+  react-native-image-picker: bf34f3f516d139ed3e24c5f5a381a91819e349ea
+  react-native-image-resizer: d9fb629a867335bdc13230ac2a58702bb8c8828f
   react-native-netinfo: 27f287f2d191693f3b9d01a4273137fcf91c3b5d
   react-native-safe-area-context: 584dc04881deb49474363f3be89e4ca0e854c057
   React-perflogger: d32ee13196f4ae2e4098fb7f8e7ed4f864c6fb0f
@@ -563,10 +575,10 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: 434efc9e5b6d0f14f49867f130b39376c971c1aa
   ReactCommon: a30c2448e5a88bae6fcb0e3da124c14ae493dac1
   RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
-  RNDeviceInfo: 0400a6d0c94186d1120c3cbd97b23abc022187a9
-  RNGestureHandler: bf572f552ea324acd5b5464b8d30755b2d8c1de6
+  RNDeviceInfo: aad3c663b25752a52bf8fce93f2354001dd185aa
+  RNGestureHandler: 62232ba8f562f7dea5ba1b3383494eb5bf97a4d3
   RNLocalize: f567ea0e35116a641cdffe6683b0d212d568f32a
-  RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
+  RNSVG: 6adc5c52d2488a476248413064b7f2832e639057
   Yoga: 099a946cbf84c9b32ffdc4278d72db26710ecf92
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 

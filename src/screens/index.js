@@ -27,7 +27,6 @@ export default function Screen() {
   useInitData();
 
   const handleBackPress = useCallback(() => {
-    console.log('>>>isLoading', isLoading);
 
     if (isLoading) {
       return true;

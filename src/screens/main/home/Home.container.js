@@ -15,7 +15,6 @@ export default function HomeContainer({navigation, route}) {
     });
   }, [navigation]);
   const params = getParams(route);
-  console.log('params::', route);
   const idioms = useSelectorShallow(getIdiomsSelector);
   const userInfo = useSelectorShallow(getUserInfoSelector);
 

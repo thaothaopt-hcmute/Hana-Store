@@ -4,7 +4,7 @@ export default {
   workingStaffs:'Working Staffs',
   checkin: 'Check in',
   checkout: 'Check out',
-
+  checkinout: 'Check In/ Out',
 
   listStaff:'List staffs',
 

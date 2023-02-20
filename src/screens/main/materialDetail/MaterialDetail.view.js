@@ -18,7 +18,7 @@ import {NAMESPACE, MATERIAL_DETAIL_SCHEME} from './MaterialDetail.constants';
 import {scalePortrait} from 'utils/responsive';
 
 function MaterialDetailView({materialDetail, onPressSubmit}) {
-  const {count, des, sample_image, last_import, note} = materialDetail;
+  const {count, des, sample_image, last_import, note, name} = materialDetail;
   const {
     handleChange,
     touched,
@@ -28,7 +28,7 @@ function MaterialDetailView({materialDetail, onPressSubmit}) {
     setFieldValue,
     resetForm,
   } = useFormik({
-    initialValues: {quantity: 0, note: ''},
+    initialValues: {quantity: 0, note: '', name: name},
     validationSchema: MATERIAL_DETAIL_SCHEME,
     validateOnChange: true,
     onSubmit: onPressSubmit,
@@ -71,6 +71,16 @@ function MaterialDetailView({materialDetail, onPressSubmit}) {
               'From here are the necessary information to fill in when importing new goods'
             }
           </AppText>
+
+          <EnterInfoBox
+            label={'Name'}
+            onChangeText={handleChange('name')}
+            error={touched.name && errors.name}
+            value={values.name}
+            messageError={errors.name}
+            placeholder={'...'}
+            // keyboardType={'numeric'}
+          />
 
           <EnterInfoBox
             label={'Quantity'}

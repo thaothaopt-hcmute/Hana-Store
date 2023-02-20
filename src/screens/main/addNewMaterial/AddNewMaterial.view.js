@@ -111,6 +111,7 @@ function AddNewMaterialView({onPressSubmit}) {
             value={values.count}
             messageError={errors.note}
             placeholder={'...'}
+            keyboardType={'numeric'}
           />
 
           <EnterInfoBox

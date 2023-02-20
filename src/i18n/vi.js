@@ -6,6 +6,7 @@ export default {
   workingStaffs: 'Nhân viên đang làm việc',
   checkin: 'Vào cửa hàng',
   checkout: 'Ra về',
+  checkinout: 'Vao/ Ra cua hang',
 
 
   listStaff:'Danh sách nhân viên',

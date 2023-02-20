@@ -10,9 +10,9 @@ import EnterInfoBox from 'components/EnterInfoBox';
 import {useFormik} from 'formik';
 import AppButton from 'components/AppButton';
 
-function UserDetailView({onPressSubmit}) {
+function UserDetailView({onPressSubmit, userInfo}) {
   const {handleChange, touched, values, errors, handleSubmit} = useFormik({
-    initialValues: {fullname: '', dob: ''},
+    initialValues: {fullname: `${userInfo.firstName} ${userInfo.lastName}`, dob: userInfo.dob},
     validationSchema: USER_DETAIL_SCHEME,
     validateOnChange: false,
     onSubmit: onPressSubmit,

@@ -28,7 +28,6 @@ export default function SignInContainer({navigation}) {
     //     }
     //   },
     // });
-    console.log('values>>', values);
     const user = USERS.find((e) => e.staffID === values.staffID);
     actions.signInSubmit(user)
     NavigationServices.resetActionTo(SCREENS_NAME.HOME, values.staffID);

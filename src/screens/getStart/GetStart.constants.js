@@ -1,1 +1,1 @@
-export const NAMESPACE = 'screens.main.getStart';
+export const NAMESPACE = 'screens.main.pos';

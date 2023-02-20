@@ -5,6 +5,7 @@ import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
 import NavigationServices from 'utils/navigationServices';
 import SCREENS_NAME from 'constants/screensName';
 // Screen Import
+import PosContainer from 'screens/main/pos/Pos.container';
 import AddNewMaterialContainer from 'screens/main/addNewMaterial/AddNewMaterial.container';
 import StatisticDeatilContainer from 'screens/main/statisticDeatil/StatisticDeatil.container';
 import StatisticsContainer from 'screens/main/statistics/Statistics.container';
@@ -22,8 +23,8 @@ import GetStartContainer from 'screens/getStart/GetStart.container';
 import {checkIsSelectedIdiomsSelector} from 'store/selectors/idiomsSelector';
 import useSelectorShallow from 'hooks/useSelectorShallowEqual';
 import AppButton from 'components/AppButton';
-import { FONT_FAMILY, FONT_SIZE } from 'constants/appFonts';
-import { DEFAULT_PADDING_HORIZONTAL } from 'constants/size';
+import {FONT_FAMILY, FONT_SIZE} from 'constants/appFonts';
+import {DEFAULT_PADDING_HORIZONTAL} from 'constants/size';
 const Stack = createStackNavigator();
 
 function RootNavigator({onNavigationStateChange}) {
@@ -51,6 +52,10 @@ function RootNavigator({onNavigationStateChange}) {
         )}
         {/* Plop screen */}
         <Stack.Screen
+          name={SCREENS_NAME.POS}
+          component={PosContainer}
+        />
+        <Stack.Screen
           name={SCREENS_NAME.ADD_NEW_MATERIAL}
           component={AddNewMaterialContainer}
         />
@@ -71,11 +76,11 @@ function RootNavigator({onNavigationStateChange}) {
           options={{
             headerRight: () => (
               <Text
-              style={{
-                fontSize: FONT_SIZE.FIT,
-                fontFamily: FONT_FAMILY.BOLD,
-                paddingHorizontal: DEFAULT_PADDING_HORIZONTAL
-              }}
+                style={{
+                  fontSize: FONT_SIZE.FIT,
+                  fontFamily: FONT_FAMILY.BOLD,
+                  paddingHorizontal: DEFAULT_PADDING_HORIZONTAL,
+                }}
                 onPress={() =>
                   NavigationServices.navigate(SCREENS_NAME.ADD_NEW_MATERIAL)
                 }>

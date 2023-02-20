@@ -46,7 +46,6 @@ export default function CategoryContainer({navigation}) {
     if (isSelectedCategory) {
       NavigationServices.resetActionTo(SCREENS_NAME.HOME);
     } else {
-      console.log('Hãy chọn một chủ đề bạn quan tâm !');
       showToastWithGravityAndOffset()
     }
   }, [actions, categories]);
